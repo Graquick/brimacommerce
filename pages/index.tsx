@@ -1,6 +1,9 @@
 import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
+import HomeLinks from './../components/HomeLinks';
+import Footer from './../components/footer/index';
+import Header from './../components/header/index';
 
 export async function getServerSideProps() {
   try {
@@ -29,39 +32,34 @@ export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="container">
+    <div className="flex flex-col justify-between w-full min-h-screen pt-20 bg-neutral-200">
       <Head>
-        <title>Create Next App</title>
+        <title>brimacommerce</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
 
-      <main>
+      <main >
         {isConnected ? (
-          <h2 className="text-xl font-bold text-red-100 font-didot">You are connected to MongoDB</h2>
+          <h2 className="">
+            You are{" "}
+            <span className="font-medium text-green-400">connected</span> to
+            MongoDB
+          </h2>
         ) : (
           <h2 className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{" "}
-            for instructions.
+            You are{" "}
+            <span className="font-medium text-red-400">NOT connected</span> to
+            MongoDB. Check the <code>README.md</code> for instructions.
           </h2>
         )}
-
-        <h1 className="text-red-400">My name is Brima</h1>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
+      <HomeLinks />
+      <Footer />
     </div>
   );
 }
