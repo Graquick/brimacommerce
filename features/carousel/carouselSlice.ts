@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { CarouselState, ProductDocument } from "../types";
-import { RootState } from "redux/store";
+import { RootState } from "../../redux/store";
 
 const initialState: CarouselState = {
   index: 0,
