@@ -1,8 +1,8 @@
 import { ComponentState } from 'react'
 
-import { current, selectCarousel } from 'features/carousel/carouselSlice';
-import { useAppSelector } from 'redux/hooks';
-import { useAppDispatch } from 'redux/hooks';
+import { current, selectCarousel } from '../../features/carousel/carouselSlice';
+import { useAppSelector } from '../../redux/hooks';
+import { useAppDispatch } from '../../redux/hooks';
 
 const Thumbnails = ({colors, setTrend}: ComponentState) => {
     const { index } = useAppSelector(selectCarousel);

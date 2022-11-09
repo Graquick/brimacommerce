@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-import { selectCarousel } from "features/carousel/carouselSlice";
-import { useAppSelector } from "redux/hooks";
+import { selectCarousel } from "../../features/carousel/carouselSlice";
+import { useAppSelector } from "../../redux/hooks";
 
 const Images = () => {
   const { index, newProducts } = useAppSelector(selectCarousel);
