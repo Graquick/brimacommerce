@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=GFS+Didot&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spline+Sans+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+
+  height: 4px;
+  width: 1px;
+  background: transparent;
+  /* background: #000; */
+}
+
+ul::-webkit-scrollbar {
+  -webkit-height: 2px;
+  -webkit-border-radius: 1ex;
+  cursor: pointer;
+}
+
+ul {
+  /* list-style-type: square; */
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+  background: #f2f2f2;
+  border: solid 1px #e5e5e5 ;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  /* background: #fe0222; */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0,0 100,0 50,50" style="fill:%23666666;" /></svg>');
+  background-position: right 20px top 50%;
+  background-repeat: no-repeat;
+  background-size: 10px;
+}
+
+/* input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+} */
