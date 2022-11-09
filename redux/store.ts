@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 
-import carouselSlice from "features/carousel/carouselSlice";
-import { productsApi } from "features/products/productsApiSlice";
+import carouselSlice from "../features/carousel/carouselSlice";
+import { productsApi } from "../features/products/productsApiSlice";
 
 export const store = configureStore({
   reducer: {
