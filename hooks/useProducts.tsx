@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useGetProductsQuery } from "features/products/productsApiSlice";
-import { getNewProducts } from "features/carousel/carouselSlice";
-import { useAppDispatch } from "redux/hooks";
+import { useGetProductsQuery } from "../features/products/productsApiSlice";
+import { getNewProducts } from "../features/carousel/carouselSlice";
+import { useAppDispatch } from "../redux/hooks";
 import { useEffect } from "react";
 
 const useProducts = () => {
