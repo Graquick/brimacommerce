@@ -1,22 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "media", // "false" or "media"
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class", // "false" or "media"
   theme: {
-    extend: {
-      colors: {
-        dark: {
-          100: "#6d706f",
-          200: "#20c991",
-          300: "#ff1f4f",
-          400: "#dae0de",
-          500: "#ffffff",
-        },
-      },
-      gridTemplateColumns: {
-        fit: "25px repeat(11,1fr 15px) 1fr 25px",
-      },
-    },
+    extend: {},
     screens: {
       "2xl": { max: "1440px" },
       // => @media (max-width: 1440px) { ... }

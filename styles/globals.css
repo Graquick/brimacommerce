@@ -28,10 +28,6 @@ ul::-webkit-scrollbar {
   cursor: pointer;
 }
 
-ul {
-  /* list-style-type: square; */
-}
-
 ::-webkit-scrollbar-thumb {
     cursor: pointer;
   background: #f2f2f2;
@@ -40,7 +36,7 @@ ul {
 }
 
 ::-webkit-scrollbar-corner {
-  /* background: #fe0222; */
+  background: #fe0222;
 }
 
 html,
