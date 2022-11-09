@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
-import { useRouter } from "next/router";
 import "../styles/globals.css";
 import { AppProps } from "next/app";
 
