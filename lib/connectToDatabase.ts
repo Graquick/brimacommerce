@@ -14,6 +14,7 @@ export async function connectToDatabase() {
         if (mongoClient) {
             return {mongoClient}
         }
+        // @ts-ignore
         mongoClient = await (new MongoClient(uri, options)).connect();
         console.log("Just Connected!");
         return {mongoClient};
