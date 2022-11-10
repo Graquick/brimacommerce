@@ -12,9 +12,7 @@ const Images = () => {
         aria-label="overlay"
         className="absolute w-full h-full bg-gradient-to-b from-neutral-900/25 via-black/5 to-black/50 "
       ></div>
-      <motion.figure
-        className="relative w-full h-[750px] overflow-hidden cursor-grab"
-      >
+      <motion.figure className="relative w-full h-[750px] overflow-hidden cursor-grab">
         <AnimatePresence>
           <motion.img
             key={index}

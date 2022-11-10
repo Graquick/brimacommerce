@@ -1,9 +1,11 @@
 import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
-import HomeLinks from './../components/HomeLinks';
-import Footer from './../components/footer/index';
-import Header from './../components/header/index';
+import HomeLinks from "./../components/HomeLinks";
+import Footer from "./../components/footer/index";
+import Header from "./../components/header/index";
+import Carousel from "../components/carousel/Carousel";
+import useProducts from "../hooks/useProducts";
 
 export async function getServerSideProps() {
   try {
@@ -31,15 +33,19 @@ export async function getServerSideProps() {
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const data = useProducts();
+  
   return (
-    <div className="flex flex-col justify-between w-full min-h-screen pt-20 bg-neutral-200">
+    <div className="flex flex-col justify-between w-full min-h-screen bg-neutral-200">
       <Head>
         <title>brimacommerce</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
 
-      <main >
+      <Carousel />
+
+      <main>
         {isConnected ? (
           <h2 className="">
             You are{" "}

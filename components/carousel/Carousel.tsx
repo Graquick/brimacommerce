@@ -2,10 +2,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 
-import { useAppSelector } from "../../redux/hooks";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { selectCarousel, next, start } from "../../features/carousel/carouselSlice";
 import Images from "./Images";
-import { useAppDispatch } from "../../redux/hooks";
 
 const Carousel = () => {
   const { index, newProducts } = useAppSelector(selectCarousel);
