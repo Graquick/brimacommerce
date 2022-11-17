@@ -1,14 +1,18 @@
-import { Props } from "./types";
+type Props = {
+  stroke: string;
+  width: number;
+  height: number;
+};
 
-export const Menu = ({fill, width, height}: Props) => {
+export const Menu = ({stroke, width, height}: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
       viewBox="0 0 24 24"
-      fill={fill}
-      stroke="currentColor"
+      fill="none"
+      stroke={stroke}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

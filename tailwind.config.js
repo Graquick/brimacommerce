@@ -7,7 +7,9 @@ module.exports = {
   ],
   darkMode: "class", // "false" or "media"
   theme: {
-    extend: {},
+    extend: {
+      
+    },
     screens: {
       "2xl": { max: "1440px" },
       // => @media (max-width: 1440px) { ... }

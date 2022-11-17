@@ -16,7 +16,10 @@ export const carouselSlice = createSlice({
       state.index -= 1;
     },
     start: (state) => {
-      state.index = initialState.index;
+      const lastIndex = state.newProducts.length - 1
+      console.log("Before", state.index)
+      state.index == lastIndex ? state.index = initialState.index : state.index += 1
+      console.log("After", state.index);
     },
     end: (state) => {
       const lastIndex = state.newProducts.length - 1;

@@ -29,9 +29,9 @@ const Nav = () => {
         variants={buttonVariants}
         animate={isOpen ? "animate" : "initial"}
         onClick={handleButton}
-        className="absolute top-0 bottom-0 z-20 my-auto right-4 mlg:hidden mlg:invisible"
+        className="absolute top-0 bottom-0 z-20 my-auto h-fit right-4 mlg:hidden mlg:invisible"
       >
-        {isOpen ? <Close /> : <Menu fill="#e2e8f0" width={24} height={24} />}
+        {isOpen ? <Close /> : <Menu stroke="white" width={24} height={24} />}
       </motion.button>
       <SideBar isOpen={isOpen} />
       <NavLinks />
