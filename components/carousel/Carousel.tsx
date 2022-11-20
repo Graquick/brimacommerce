@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { useAppSelector, useAppDispatch } from "../../redux/hooks";
-import { selectCarousel, next, start } from "../../features/carousel/carouselSlice";
+import { selectCarousel, auto } from "../../features/carousel/carouselSlice";
 import Images from "./Images";
 
 const Carousel = () => {
@@ -16,13 +16,13 @@ const Carousel = () => {
 
   useEffect(() => {
         const interval = setInterval(() => {
-          dispatch(start())
-    }, 3500);
+          dispatch(auto())
+    }, 15000);
     return () => clearInterval(interval);
   }, [index]);
   
   return (
-    <section className="w-full">
+    <section className="w-full h-fit">
       <Images />
     </section>
   );

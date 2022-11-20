@@ -13,9 +13,9 @@ export const carouselSlice = createSlice({
   initialState,
   reducers: {
     previous: (state) => {
-      state.index -= 1;
+      state.index -= 1
     },
-    start: (state) => {
+    auto: (state) => {
       const lastIndex = state.newProducts.length - 1
       console.log("Before", state.index)
       state.index == lastIndex ? state.index = initialState.index : state.index += 1
@@ -40,7 +40,7 @@ export const carouselSlice = createSlice({
 
 export const selectCarousel = (state: RootState) => state.carousel;
 
-export const { previous, start, end, next, current, getNewProducts } =
+export const { previous, auto, end, next, current, getNewProducts } =
   carouselSlice.actions;
 
 export default carouselSlice.reducer;

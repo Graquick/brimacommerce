@@ -31,7 +31,7 @@ const Nav = () => {
         onClick={handleButton}
         className="absolute top-0 bottom-0 z-20 my-auto h-fit right-4 mlg:hidden mlg:invisible"
       >
-        {isOpen ? <Close /> : <Menu stroke="white" width={24} height={24} />}
+        {isOpen ? <Close stroke="#000" /> : <Menu stroke="white" width={24} height={24} />}
       </motion.button>
       <SideBar isOpen={isOpen} />
       <NavLinks />

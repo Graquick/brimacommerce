@@ -6,6 +6,7 @@ import Footer from "./../components/footer/index";
 import Header from "./../components/header/index";
 import Carousel from "../components/carousel/Carousel";
 import useProducts from "../hooks/useProducts";
+import HomeAbout from "../components/HomeAbout";
 
 export async function getServerSideProps() {
   try {
@@ -36,7 +37,7 @@ export default function Home({
   const data = useProducts();
   
   return (
-    <div className="flex flex-col justify-between w-full min-h-screen bg-neutral-200">
+    <div className="flex relative flex-col w-full min-h-screen bg-white">
       <Head>
         <title>brimacommerce</title>
         <link rel="icon" href="/favicon.ico" />
@@ -45,7 +46,8 @@ export default function Home({
 
       <Carousel />
 
-      <main>
+      <main className="flex flex-col gap-12">
+        <HomeAbout/>
         {isConnected ? (
           <h2 className="">
             You are{" "}
