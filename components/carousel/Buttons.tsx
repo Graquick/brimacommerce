@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   previous,
   next,
-  start,
+  auto,
   end,
   selectCarousel,
 } from "../../features/carousel/carouselSlice";
@@ -36,7 +36,7 @@ const Buttons = ({setTrend}: ComponentState) => {
           if (index < lastIndex) {
             dispatch(next());
           } else {
-            dispatch(start());
+            dispatch(auto());
           }
         }}
         className="absolute top-0 bottom-0 p-0 my-auto border-none rounded-none right-2 bg-black/50 backdrop-blur-lg btn"
