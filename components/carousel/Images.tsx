@@ -10,7 +10,7 @@ export default function Home() {
   const { index, newProducts } = useSelector(selectCarousel);
   const dispatch = useAppDispatch();
   let prev = usePrevious(index);
-  let [ref, { height }] = useMeasure();
+  let [ref, { width, height }] = useMeasure();
 
   let url = newProducts[index]?.image;
   let direction = index > prev ? 1 : -1;
@@ -21,7 +21,7 @@ export default function Home() {
         ref={ref}
         className="relative flex items-center justify-center h-[650px] overflow-hidden bg-white"
       >
-        <AnimatePresence custom={{ direction, height }}>
+        <AnimatePresence custom={{ direction, width, height }}>
           <motion.div
             key={index}
             variants={variants}
@@ -33,7 +33,7 @@ export default function Home() {
               backgroundImage: `url(${url})`,
               backgroundSize: "cover",
             }}
-            custom={{ direction, height }}
+            custom={{ direction, width, height }}
             className={`absolute flex flex-col w-full h-full justify-end text-3xl font-bold`}
           >
             <motion.div
@@ -43,8 +43,8 @@ export default function Home() {
               initial="enter"
               animate="center"
               exit="exit"
-              custom={{ direction, height }}
-              className="absolute w-full top-0 bg-white/80 backdrop-blur-xl"
+              custom={{ direction, width, height }}
+              className="absolute top-0 h-full bg-white/80 backdrop-blur-md"
             ></motion.div>
           </motion.div>
         </AnimatePresence>
@@ -54,17 +54,17 @@ export default function Home() {
 }
 
 let variants = {
-  enter: ({ direction, height }: { direction: number; height: number }) => ({
-    height: height,
+  enter: ({ direction, width }: { direction: number; width: number}) => ({
+    width: width,
   }),
   center: {
-    height: 0,
+    width: 0,
     transition: {
       delay: 1,
     },
   },
-  exit: ({ direction, height }: { direction: number; height: number }) => ({
-    height: height,
+  exit: ({ direction, width }: { direction: number; width: number }) => ({
+    width: width,
     // transition: {
     //   duration: 0.5,
     // },
