@@ -44,7 +44,7 @@ export default function Home() {
               animate="center"
               exit="exit"
               custom={{ direction, width, height }}
-              className="absolute top-0 h-full bg-white/80 backdrop-blur-md"
+              className="absolute top-0 h-full bg-white/80 backdrop-blur-lg"
             ></motion.div>
           </motion.div>
         </AnimatePresence>
