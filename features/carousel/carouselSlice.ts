@@ -6,6 +6,7 @@ import { RootState } from "../../redux/store";
 const initialState: CarouselState = {
   index: 0,
   newProducts: [],
+  popularProducts: [],
 };
 
 export const carouselSlice = createSlice({
@@ -17,9 +18,7 @@ export const carouselSlice = createSlice({
     },
     auto: (state) => {
       const lastIndex = state.newProducts.length - 1
-      console.log("Before", state.index)
       state.index == lastIndex ? state.index = initialState.index : state.index += 1
-      console.log("After", state.index);
     },
     end: (state) => {
       const lastIndex = state.newProducts.length - 1;
@@ -35,12 +34,16 @@ export const carouselSlice = createSlice({
       const filteredArr = action.payload.filter((product: ProductDocument) => product.new === true);
       state.newProducts = filteredArr;
     },
+    getPopularProducts: (state, action) => {
+      const filteredArr = action.payload.filter((product: ProductDocument) => product.popular === true);
+      state.popularProducts = filteredArr;
+    }
   },
 });
 
 export const selectCarousel = (state: RootState) => state.carousel;
 
-export const { previous, auto, end, next, current, getNewProducts } =
+export const { previous, auto, end, next, current, getNewProducts,  getPopularProducts} =
   carouselSlice.actions;
 
 export default carouselSlice.reducer;

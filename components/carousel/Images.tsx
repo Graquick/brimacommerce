@@ -8,7 +8,6 @@ import { selectCarousel } from "../../features/carousel/carouselSlice";
 
 export default function Home() {
   const { index, newProducts } = useSelector(selectCarousel);
-  const dispatch = useAppDispatch();
   let prev = usePrevious(index);
   let [ref, { width, height }] = useMeasure();
 
@@ -28,7 +27,7 @@ export default function Home() {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            transition={{ duration: 1 }}
+            transition={{ duration: .5 }}
             style={{
               backgroundImage: `url(${url})`,
               backgroundSize: "cover",

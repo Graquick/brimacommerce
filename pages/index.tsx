@@ -10,6 +10,7 @@ import Header from "./../components/header/index";
 import Carousel from "../components/carousel/Carousel";
 import useProducts from "../hooks/useProducts";
 import HomeAbout from "../components/HomeAbout";
+import HomePop from "../components/HomePop";
 
 export async function getServerSideProps() {
   try {
@@ -56,7 +57,11 @@ export default function Home({
         {/* <h2 className="text-[3rem] uppercase max-w-[600px] self-center text-center">minimal & sustainable clothing</h2> */}
         <Carousel />
         <HomeAbout />
-        {isConnected ? (
+        <h2 className="self-center text-3xl text-[#383B45] mb-12">
+          Popular Products
+        </h2>
+        <HomePop />
+        {/* {isConnected ? (
           <h2 className="">
             You are{" "}
             <span className="font-medium text-green-400">connected</span> to
@@ -72,7 +77,7 @@ export default function Home({
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
-        </p>
+        </p> */}
       </main>
       <HomeLinks />
       <Footer />

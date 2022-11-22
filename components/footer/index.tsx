@@ -6,8 +6,8 @@ const Footer = () => {
     let y: number = d.getFullYear();
 
   return (
-    <footer className='self-center absolute bottom-0 w-full bg-black h-fit'>
-      <p className="text-[9px] text-white text-justify w-fit cursor-default">
+    <footer className='absolute bottom-0 self-center w-full bg-white h-fit'>
+      <p className="text-[9px] text-white text-justify w-fit mix-blend-difference cursor-default">
         &copy; {y} Brima Freeman, All Rights Reserved
       </p>
     </footer>

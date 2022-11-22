@@ -10,10 +10,6 @@ const Carousel = () => {
   const { index, newProducts } = useAppSelector(selectCarousel);
   const dispatch = useAppDispatch();
 
-  const lastIndex = newProducts.length - 1
-
-  const [prevCount, setPrevCount] = useState(index);
-
   useEffect(() => {
         const interval = setInterval(() => {
           dispatch(auto())

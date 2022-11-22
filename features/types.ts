@@ -10,9 +10,11 @@ export type ProductDocument = Document & {
   quantity: number;
   price: number;
   new: boolean;
+  popular: boolean;
 };
 
 export interface CarouselState {
   index: number;
   newProducts: ProductDocument[];
+  popularProducts: ProductDocument[]
 }
