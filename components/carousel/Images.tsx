@@ -10,54 +10,42 @@ export default function Home() {
   const { index, newProducts } = useSelector(selectCarousel);
   const dispatch = useAppDispatch();
   let prev = usePrevious(index);
-  let [ref, { width }] = useMeasure();
+  let [ref, { height }] = useMeasure();
 
   let url = newProducts[index]?.image;
   let direction = index > prev ? 1 : -1;
 
   return (
-    <div className="w-full h-fit">
+    <div className="w-full mlg:w-[375px] h-fit">
       <figure
         ref={ref}
-        className="relative flex items-center justify-center h-[650px] overflow-hidden bg-gray-700"
+        className="relative flex items-center justify-center h-[650px] overflow-hidden bg-white"
       >
-        <AnimatePresence custom={{ direction, width }}>
+        <AnimatePresence custom={{ direction, height }}>
           <motion.div
             key={index}
             variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 1 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{ duration: .5 }}
             style={{
               backgroundImage: `url(${url})`,
               backgroundSize: "cover",
             }}
-            custom={{ direction, width }}
+            custom={{ direction, height }}
             className={`absolute flex flex-col w-full h-full justify-end text-3xl font-bold`}
           >
-            <div
+            <motion.div
+            key={index}
               aria-label="image overlay"
-              style={{
-                background:
-                  "linear-gradient(hsl(0 0% 0% / .3),hsl(20 0% 0% / .1) 35%,hsl(0 0% 0% / .05))",
-              }}
-              className="absolute w-full h-full"
-            ></div>
-            <motion.figcaption
-              initial={{ opacity: 0, y: 100, scale: 0 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 1.5 }, scale: 1 }}
-              exit={{ opacity: 0, y: 100, scale: 0 }}
-              className="flex absolute self-center gap-2 p-4 text-center text-black "
-            >
-              <h2 className="p-2 text-xl font-light bg-white">
-                {newProducts[index]?.name}
-              </h2>
-              <p className="p-2 text-xl font-light bg-white font-didot w-fit">
-                {newProducts[index]?.price}{" "}
-                <span className="text-[1.5rem]">€‎</span>{" "}
-              </p>
-            </motion.figcaption>
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              custom={{ direction, height }}
+              className="absolute w-full top-0 bg-white/80 backdrop-blur-xl"
+            ></motion.div>
           </motion.div>
         </AnimatePresence>
       </figure>
@@ -66,12 +54,20 @@ export default function Home() {
 }
 
 let variants = {
-  enter: ({ direction, width }: { direction: number; width: number }) => ({
-    opacity: 0,
+  enter: ({ direction, height }: { direction: number; height: number }) => ({
+    height: height,
   }),
-  center: { opacity: 1 },
-  exit: ({ direction, width }: { direction: number; width: number }) => ({
-    opacity: 0,
+  center: {
+    height: 0,
+    transition: {
+      delay: 1,
+    },
+  },
+  exit: ({ direction, height }: { direction: number; height: number }) => ({
+    height: height,
+    // transition: {
+    //   duration: 0.5,
+    // },
   }),
 };
 

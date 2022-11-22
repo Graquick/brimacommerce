@@ -58,7 +58,7 @@ const SideBar = ({isOpen}: ComponentState) => {
             initial="initial"
             animate="animate"
             exit="initial"
-            className="fixed bg-white/80 backdrop-blur-sm shadow-sm text-black text-2xl flex flex-col pt-24 pl-12 gap-8 w-[300px] h-screen top-0 -right-12 mlg:hidden mlg:invisible"
+            className="fixed bg-white/80 backdrop-blur-md shadow-sm text-black text-2xl flex flex-col pt-24 pl-12 gap-8 w-[300px] h-screen top-0 -right-12 mlg:hidden mlg:invisible"
           >
             {navLinks.map((link) => {
               return (

@@ -17,12 +17,12 @@ const Carousel = () => {
   useEffect(() => {
         const interval = setInterval(() => {
           dispatch(auto())
-    }, 15000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [index]);
   
   return (
-    <section className="w-full h-fit">
+    <section className="w-full h-fit mlg:flex mlg:justify-center">
       <Images />
     </section>
   );

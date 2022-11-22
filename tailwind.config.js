@@ -7,9 +7,7 @@ module.exports = {
   ],
   darkMode: "class", // "false" or "media"
   theme: {
-    extend: {
-      
-    },
+    extend: {},
     screens: {
       "2xl": { max: "1440px" },
       // => @media (max-width: 1440px) { ... }
@@ -37,6 +35,8 @@ module.exports = {
 
       xs: { max: "320px" },
       // => @media (max-width: 320px) { ... }
+      m425: { min: "426px" },
+      // => @media (min-width: 426px) { ... }
     },
     fontFamily: {
       raleway: "Raleway, sans-serif",

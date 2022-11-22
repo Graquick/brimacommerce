@@ -37,17 +37,17 @@ export default function Home({
   const data = useProducts();
   
   return (
-    <div className="flex relative flex-col w-full min-h-screen bg-white">
+    <div className="relative flex flex-col w-full min-h-screen bg-white">
       <Head>
         <title>brimacommerce</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
 
-      <Carousel />
-
-      <main className="flex flex-col gap-12">
-        <HomeAbout/>
+      <main className="flex flex-col mt-16">
+        {/* <h2 className="text-[3rem] uppercase max-w-[600px] self-center text-center">minimal & sustainable clothing</h2> */}
+        <Carousel />
+        <HomeAbout />
         {isConnected ? (
           <h2 className="">
             You are{" "}
