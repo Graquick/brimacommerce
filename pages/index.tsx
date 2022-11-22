@@ -1,6 +1,9 @@
+import {useState, useEffect} from 'react'
 import Head from "next/head";
-import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
+import {motion} from 'framer-motion'
+
+import clientPromise from "../lib/mongodb";
 import HomeLinks from "./../components/HomeLinks";
 import Footer from "./../components/footer/index";
 import Header from "./../components/header/index";
@@ -34,6 +37,11 @@ export async function getServerSideProps() {
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [mousePos, setMousPos] = useState({
+    x: 0,
+    y: 0,
+  })
+
   const data = useProducts();
   
   return (
