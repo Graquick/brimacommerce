@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const HomeAbout = () => {
 
   return (
-    <section className="mlg:max-w-[1024px] mlg:h-[768px] w-full mx-auto h-[1024px] bg-inherit gap-0 text-[#383B45] grid grid-cols-1 mlg:grid-cols-2 grid-rows-1 place-items-center">
+    <section className="mlg:max-w-[1024px] mlg:h-[768px] w-full mx-auto h-[1024px] mb-24 bg-inherit gap-0 text-[#383B45] grid grid-cols-1 mlg:grid-cols-2 grid-rows-1 place-items-center">
       <figcaption className="flex flex-col items-center gap-[31.5px] w-fit">
         <h2 className="text-3xl max-w-[300px] text-center">
           Made only with Natural materials
